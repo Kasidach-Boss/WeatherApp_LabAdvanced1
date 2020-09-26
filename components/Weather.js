@@ -1,12 +1,17 @@
 import React, { useState,useEffect } from 'react';
 import { View, Text, ImageBackground, StyleSheet ,Image} from 'react-native';
 import Forecast from './Forecast';
+import ZipCodeScreen from './ZipCodeScreen';
 
 
 const apiKey = '6cecb9dd2e369d7e9b5d62bc682150d4'
 export default function Weather(props) {
     
-   
+   const convert =() =>{
+    this.setState({
+        kelvin: forecastInfo.temp + 273 
+      });
+   }
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         icon: '-',

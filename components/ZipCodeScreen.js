@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         fontWeight: "bold",
-        color: "lightblue",
+        color: "black",
         alignItems: "center",
         padding: 10
 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     textdetail: {
         fontSize: 20,
         fontWeight: "bold",
-        color: "white",
+        color: "black",
         flex: 1,
         alignItems: "center"
 
@@ -85,10 +85,10 @@ const styles = StyleSheet.create({
     cover: {
         flexDirection: "row",
         justifyContent: "center",
-        backgroundColor: 'black',
+        backgroundColor: 'white',
         width: '100%',
         height: '100%',
-        opacity: 0.4,
+        opacity: 0.5,
 
 
     },
