@@ -11,8 +11,10 @@ export default function Weather(props) {
         main: '-',
         icon: '-',
         description: '-',
-        temp: 0
+        temp: 0,
+        
     })
+    
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
         if (props.zipCode) {
@@ -26,6 +28,7 @@ export default function Weather(props) {
                         description: json.weather[0].description,
                         temp: json.main.temp,
                         icon: json.weather[0].icon,
+                       
                     });
                 })
                 .catch((error) => {
@@ -39,8 +42,9 @@ export default function Weather(props) {
                 <View style={styles.cover}>
                     <Text style={styles.medium}>Zip Code:{props.zipCode}</Text>
                      <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                    style={{width: 300, height: 300}} />
+                        style={{width: 300, height: 300}} />
                     <Forecast {...forecastInfo} />
+                    
                    
                    
                 </View>

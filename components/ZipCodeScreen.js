@@ -15,7 +15,7 @@ const availableZipItems = [
 
 const _keyExtractor = item => item.code
 
-const ZipItem = ({ place, code, navigation, pic}) => (
+const ZipItem = ({ place, code, navigation}) => (
     
 
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code })}>
