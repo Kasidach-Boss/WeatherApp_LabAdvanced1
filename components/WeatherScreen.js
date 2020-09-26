@@ -6,7 +6,7 @@ import { useLinkProps } from '@react-navigation/native';
 
 
 export default function WeatherScreen({route}) { 
-   // if(props.) 
+   
        
     return (
         

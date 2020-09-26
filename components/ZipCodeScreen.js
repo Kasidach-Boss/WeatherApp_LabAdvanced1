@@ -4,13 +4,15 @@ import { View, Text, FlatList, StyleSheet, ImageBackground } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { useState } from "react";
+
+
 const availableZipItems = [
-    { place: 'Hatyai', code: '90110' , pic:'../Hatyai.jpg' },
-    { place: 'Trang', code: '92000' ,pic:'../Hatyai.jpg'},
-    { place: 'Chiangmai', code: '50000' ,pic:'../Hatyai.jpg'},
-    { place: 'Khonkaen', code: '40000' ,pic:'../Hatyai.jpg'},
-    { place: 'Chonburi', code: '20000',pic:'../Hatyai.jpg' },
-    { place: 'Phatthalung', code: '93000',pic:'../Hatyai.jpg' }
+    { place: 'Hatyai', code: '90110' ,  },
+    { place: 'Trang', code: '92000' ,},
+    { place: 'Chiangmai', code: '50000' ,},
+    { place: 'Khonkaen', code: '40000' ,},
+    { place: 'Chonburi', code: '20000', },
+    { place: 'Phatthalung', code: '93000', }
 ]
 
 const _keyExtractor = item => item.code
@@ -23,7 +25,8 @@ const ZipItem = ({ place, code, navigation}) => (
         <View >
             {/* <StatusBar barstyle="dark-content" backgroundColor="#00aaff" style="auto" /> */}
 
-            <View style={styles.text}>
+            <View style={styles.textContainer}>
+            
                 <Text style={styles.text}>Place:{place}</Text>
                 <Text style={styles.textdetail}>Zipcode:{code}</Text>
                
@@ -59,8 +62,10 @@ const styles = StyleSheet.create({
         borderStyle: "dotted",
         borderWidth: 1,
         borderRadius: 3,
-        width: 300,
-        height: 100
+        width: '100%',
+        height: 100,
+        alignItems: "center",
+        
     },
     text: {
         fontSize: 20,
