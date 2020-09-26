@@ -3,18 +3,20 @@ import { StatusBar } from 'expo-status-bar';
 import { View, Text, FlatList, StyleSheet, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import { useState } from "react";
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' , pic:'../Hatyai.jpg' },
-    { place: 'Trang', code: '92000' },
-    { place: 'Chiangmai', code: '50000' },
-    { place: 'Khonkaen', code: '40000' },
-    { place: 'Chonburi', code: '20000' },
-    { place: 'Phatthalung', code: '93000' }
+    { place: 'Trang', code: '92000' ,pic:'../Hatyai.jpg'},
+    { place: 'Chiangmai', code: '50000' ,pic:'../Hatyai.jpg'},
+    { place: 'Khonkaen', code: '40000' ,pic:'../Hatyai.jpg'},
+    { place: 'Chonburi', code: '20000',pic:'../Hatyai.jpg' },
+    { place: 'Phatthalung', code: '93000',pic:'../Hatyai.jpg' }
 ]
 
 const _keyExtractor = item => item.code
 
-const ZipItem = ({ place, code, navigation }) => (
+const ZipItem = ({ place, code, navigation, pic}) => (
+    
 
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code })}>
 
@@ -24,6 +26,7 @@ const ZipItem = ({ place, code, navigation }) => (
             <View style={styles.text}>
                 <Text style={styles.text}>Place:{place}</Text>
                 <Text style={styles.textdetail}>Zipcode:{code}</Text>
+               
             </View>
 
         </View>
@@ -44,7 +47,7 @@ export default function ZipCodeScreen() {
 
                     /></View>
             </ImageBackground>
-            <StatusBar style="auto" />
+            
 
         </View>
     );
@@ -84,6 +87,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: 'black',
         width: '100%',
+        height: '100%',
         opacity: 0.4,
 
 
@@ -93,4 +97,5 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%'
     },
+    
 });

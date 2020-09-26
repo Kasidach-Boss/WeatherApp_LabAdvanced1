@@ -1,17 +1,19 @@
 import React from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import {Feather} from '@expo/vector-icons';
+
 
 export default function Forecast(props) {
+    
     return (
         <View style={styles.center}>
             <Text style={styles.big}>{props.main}</Text>
+            
             <Text style={styles.medium}>{props.description}</Text>
-            <View style={{marginTop: 20}}>
-                <Text>
-                    <Text style={styles.big}>{props.temp}  </Text>
-                    <Text style={styles.medium}>°C</Text>
-                </Text>
-            </View>
+            <View style={{marginTop: 20}}>                
+                <Text style={styles.big}>{props.temp}°C</Text>            
+            </View>    
+            
         </View>
     );
 }
@@ -23,11 +25,16 @@ const styles = StyleSheet.create({
     big: {
         marginTop: 20,
         fontSize: 30,
-        color: 'white',
+        color: 'black',
+        fontWeight: "bold"
     },
     medium: {
         marginTop: 20,
-        fontSize: 15,
-        color: 'white',
+        fontSize: 20,
+        color: 'black',
+        fontWeight: "bold"
     }
 })
+/*
+
+*/
