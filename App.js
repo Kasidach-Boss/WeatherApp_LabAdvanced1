@@ -16,7 +16,7 @@ export default function App() {
         name="Home"
         component={ZipCodeScreen}
         options={{
-          title: 'My home',
+          title: 'My Home',
           headerStyle: {
             backgroundColor: '#00aaff',
           },

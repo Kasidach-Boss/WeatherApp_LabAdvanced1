@@ -17,7 +17,9 @@ export default function Weather(props) {
         icon: '-',
         description: '-',
         temp: 0,
-        
+        pressure: 0,
+        humidity:0,
+        speed:0,
     })
     
     useEffect(() => {
@@ -33,7 +35,9 @@ export default function Weather(props) {
                         description: json.weather[0].description,
                         temp: json.main.temp,
                         icon: json.weather[0].icon,
-                       
+                        pressure: json.main.pressure,
+                        humidity: json.main.humidity,
+                        speed: json.wind.speed,
                     });
                 })
                 .catch((error) => {
@@ -47,7 +51,7 @@ export default function Weather(props) {
                 <View style={styles.cover}>
                     <Text style={styles.medium}>Zip Code:{props.zipCode}</Text>
                      <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                        style={{width: 300, height: 300}} />
+                        style={{width: 250, height: 250}} />
                     <Forecast {...forecastInfo} />
                     
                    
@@ -71,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     medium: {
-        marginTop: 32,
+        marginTop: 20,
         fontSize: 20,
         color: 'black',
         fontWeight:'bold',
