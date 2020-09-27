@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "black",
         alignItems: "center",
-        padding: 10
+        padding: 15
 
 
 
