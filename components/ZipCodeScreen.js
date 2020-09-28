@@ -1,30 +1,30 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, FlatList, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ImageBackground, TouchableOpacity ,Alert,Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import { useState } from "react";
+
+
+
 
 
 const availableZipItems = [
-    { place: 'Hatyai', code: '90110' ,  },
-    { place: 'Trang', code: '92000' ,},
-    { place: 'Chiangmai', code: '50000' ,},
-    { place: 'Khonkaen', code: '40000' ,},
-    { place: 'Chonburi', code: '20000', },
-    { place: 'Phatthalung', code: '93000', }
+    { place: 'Hatyai', code: '90110'  },
+    { place: 'Trang', code: '92000' },
+    { place: 'Chiangmai', code: '50000' },
+    { place: 'Khonkaen', code: '40000' },
+    { place: 'Chonburi', code: '20000' },
+    
 ]
 
 const _keyExtractor = item => item.code
 
 const ZipItem = ({ place, code, navigation}) => (
     
-
+    
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code })}>
 
         <View >
-            {/* <StatusBar barstyle="dark-content" backgroundColor="#00aaff" style="auto" /> */}
-
             <View style={styles.textContainer}>
             
                 <Text style={styles.text}>Place:{place}</Text>
@@ -37,14 +37,17 @@ const ZipItem = ({ place, code, navigation}) => (
 
 )
 
+
 export default function ZipCodeScreen() {
     
     const navigation = useNavigation()
     return (
         <View >
+            
              <StatusBar barstyle="dark-content" backgroundColor="#00aaff" style="auto" />
             <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
                 <View style={styles.cover}>
+                
                     <FlatList
                         data={availableZipItems}
                         keyExtractor={_keyExtractor}
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "black",
         alignItems: "center",
-        padding: 10
+        padding: 5
 
 
 

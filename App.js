@@ -1,58 +1,114 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './components/ZipCodeScreen';
 import WeatherScreen from './components/WeatherScreen';
+import { View ,Text ,Image} from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+
+const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-
-export default function App() {
+function Home(){
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={ZipCodeScreen}
-        options={{
-          title: 'My Home',
-          headerStyle: {
-            backgroundColor: '#00aaff',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-        
+     
+        <Stack.Navigator>
         <Stack.Screen
-        name="Weather"
-        component={WeatherScreen}
+          name="Home"
+          component={ZipCodeScreen}
+          options={{
+            title: 'My Home',
+            headerStyle: {
+              backgroundColor: '#00aaff',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+          
+          <Stack.Screen
+          name="Weather"
+          component={WeatherScreen}
+          options={{
+            title: 'Weather',
+            headerStyle: {
+              backgroundColor: '#00aaff',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        </Stack.Navigator> 
+      
+    );  
+
+  }
+  function Aboutme (){
+    
+    return(
+      <View style={{ flex: 1 , alignItems: 'center', backgroundColor:  'lightblue' }}>
+        <View style={{alignItems:'center', }}>
+          <View style={{marginTop:50,backgroundColor:'lightgreen',borderRadius: 20,width: 200,height: 50,alignItems:'center'}} >
+          <Text style={{fontWeight:'bold',fontSize:30,alignItems:'center',}}>About me</Text>
+          </View>
+          <Image source ={require('./Boss.jpg')} style={{width: 300, height: 300,alignItems:'center',marginTop:20}}/>
+          <View style={{marginTop:20,backgroundColor:'pink',borderRadius: 20,width: 350,height: 150,}}>
+            <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10,marginTop:20 }}>1.My name is Kasidach Sangthong.</Text>
+            <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10 }}>2.My student ID is 6135512045.</Text>
+            <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10 }}>3.I study at Computer Engineering {"\n"}Prince of Songkla University ,Phuket Campus.</Text>
+            <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10 }}>4.Contact: s6135512045@phuket.psu.ac.th</Text>
+          </View>
+        </View>
+        
+    </View>
+    )
+    
+  }
+  function MyTabs() {
+    return (
+      <Tab.Navigator
+      initialRouteName="Home"
+      tabBarOptions={{
+        activeTintColor: '#e91e63',
+      }}
+    >
+      <Tab.Screen
+        name="Home"
+        component={Home}
         options={{
-          title: 'Weather',
-          headerStyle: {
-            backgroundColor: '#00aaff',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
         }}
       />
-      </Stack.Navigator> 
-    </NavigationContainer>  
+      <Tab.Screen
+        name="About me"
+        component={Aboutme}
+        options={{
+          tabBarLabel: 'About me',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+     
+    </Tab.Navigator>
+  );
     
-  );     
-  
+  }
+  export default function App() {
+  return(
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  );
+       
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    
-  },
-})
-
 
 

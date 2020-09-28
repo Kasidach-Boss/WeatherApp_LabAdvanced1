@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text,SafeAreaView, ScrollView,  StyleSheet } from 'react-native';
-import {Feather} from '@expo/vector-icons';
-
+import { View, Text,  StyleSheet ,} from 'react-native';
 
 export default function Forecast(props) {
     
@@ -19,6 +17,7 @@ export default function Forecast(props) {
                 <Text style={styles.Info}>Humidity: {props.humidity}%</Text>
                 <Text style={styles.Info}>Wind-Speed: {props.speed}m/s W</Text>
             </View>    
+            
         </View>     
 
         
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
         backgroundColor:'pink',
         borderRadius: 20,
         width: 350,
-        height: 130,
+        height: 110,
         
     },
 })

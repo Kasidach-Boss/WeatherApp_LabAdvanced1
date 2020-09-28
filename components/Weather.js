@@ -1,17 +1,13 @@
 import React, { useState,useEffect } from 'react';
 import { View, Text, ImageBackground, StyleSheet ,Image} from 'react-native';
 import Forecast from './Forecast';
-import ZipCodeScreen from './ZipCodeScreen';
+
 
 
 const apiKey = '6cecb9dd2e369d7e9b5d62bc682150d4'
 export default function Weather(props) {
     
-   const convert =() =>{
-    this.setState({
-        kelvin: forecastInfo.temp + 273 
-      });
-   }
+   
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         icon: '-',
@@ -45,19 +41,86 @@ export default function Weather(props) {
                 });
         }
     }, [props.zipCode])
+    const BG = () => {
+        if(props.zipCode === '90110'){
+            return(
+                <ImageBackground source={require('../Hatyai.jpg')} style={styles.backdrop}>
+                <View style={styles.cover}>
+                    <Text style={styles.medium}>Hatyai {props.zipCode} Thailand</Text>
+                    <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
+                    style={{width: 250, height: 250}} />
+                    <Forecast {...forecastInfo} />  
+                </View>
+                </ImageBackground>
+            )
+        }
+        if(props.zipCode === '92000'){
+            return(
+                <ImageBackground source={require('../Trang.jpg')} style={styles.backdrop}>
+                    <View style={styles.cover}>
+                    <Text style={styles.medium}>Trang {props.zipCode} Thailand</Text>
+                    <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
+                    style={{width: 250, height: 250}} />
+                    <Forecast {...forecastInfo} />  
+                </View>
+                </ImageBackground>
+            )
+        }
+        if(props.zipCode === '50000'){
+            return(
+                <ImageBackground source={require('../ChiangMai.jpg')} style={styles.backdrop}>
+                    <View style={styles.cover}>
+                    <Text style={styles.medium}>Chiangmai {props.zipCode} Thailand</Text>
+                    <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
+                    style={{width: 250, height: 250}} />
+                    <Forecast {...forecastInfo} />  
+                </View>
+                </ImageBackground>
+            )
+        }
+        if(props.zipCode === '40000'){
+            return(
+                <ImageBackground source={require('../Khonkaen.jpg')} style={styles.backdrop}>
+                    <View style={styles.cover}>
+                    <Text style={styles.medium}>Khonkaen {props.zipCode} Thailand</Text>
+                    <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
+                    style={{width: 250, height: 250}} />
+                    <Forecast {...forecastInfo} />  
+                </View>
+                </ImageBackground>
+            )
+        }
+        if(props.zipCode === '20000'){
+            return(
+                <ImageBackground source={require('../Chonburi.jpg')} style={styles.backdrop}>
+                <View style={styles.cover}>
+                    <Text style={styles.medium}>Chonburi {props.zipCode} Thailand</Text>
+                    <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
+                    style={{width: 250, height: 250}} />
+                    <Forecast {...forecastInfo} />  
+                </View>
+                </ImageBackground>
+            )
+        }
+       else{
+        return(
+            <ImageBackground source={require('../View.jpg')} style={styles.backdrop}>
+            <View style={styles.cover}>
+                <Text style={styles.medium}>Chonburi {props.zipCode} Thailand</Text>
+                <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
+                style={{width: 250, height: 250}} />
+                <Forecast {...forecastInfo} />  
+            </View>
+            </ImageBackground>
+        )
+
+       }
+    }
+        
     return (
         <View>
-            <ImageBackground source={require('../View.jpg')} style={styles.backdrop}>
-                <View style={styles.cover}>
-                    <Text style={styles.medium}>Zip Code:{props.zipCode}</Text>
-                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                        style={{width: 250, height: 250}} />
-                    <Forecast {...forecastInfo} />
-                    
-                   
-                   
-                </View>
-            </ImageBackground>
+                <BG/>
+                
         </View>
     );
 }
