@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, FlatList, StyleSheet, ImageBackground, TouchableOpacity ,Alert,Button} from 'react-native';
+import { View, Text, FlatList, StyleSheet, ImageBackground} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
