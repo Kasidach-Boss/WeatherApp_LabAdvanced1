@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './components/ZipCodeScreen';
 import WeatherScreen from './components/WeatherScreen';
-import { View ,Text ,Image} from 'react-native';
+import { View ,Text ,Image,ScrollView,StyleSheet} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -52,18 +52,19 @@ function Home(){
     
     return(
       <View style={{ flex: 1 , alignItems: 'center', backgroundColor:  'lightblue' }}>
-        <View style={{alignItems:'center', }}>
+       
           <View style={{marginTop:50,backgroundColor:'lightgreen',borderRadius: 20,width: 200,height: 50,alignItems:'center'}} >
-          <Text style={{fontWeight:'bold',fontSize:30,alignItems:'center',}}>About me</Text>
+          <Text style={{fontWeight:'bold',fontSize:30,alignItems:'center'}}>About me</Text>
           </View>
+           <ScrollView style={styles.center}>
           <Image source ={require('./Boss.jpg')} style={{width: 300, height: 300,alignItems:'center',marginTop:20}}/>
-          <View style={{marginTop:20,backgroundColor:'pink',borderRadius: 20,width: 350,height: 150,}}>
+          <View style={{marginTop:20,backgroundColor:'pink',borderRadius: 20,width: '100%',height: 140,}}>
             <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10,marginTop:20 }}>1.My name is Kasidach Sangthong.</Text>
             <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10 }}>2.My student ID is 6135512045.</Text>
             <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10 }}>3.I study at Computer Engineering {"\n"}Prince of Songkla University ,Phuket Campus.</Text>
             <Text style={{fontSize: 14,color: 'black',fontWeight: "bold",justifyContent: 'flex-start',marginLeft:10 }}>4.Contact: s6135512045@phuket.psu.ac.th</Text>
           </View>
-        </View>
+        </ScrollView>
         
     </View>
     )
@@ -111,4 +112,9 @@ function Home(){
        
 }
 
+const styles = StyleSheet.create({
+  center:{
+    alignSelf:'center'
+  }
+})
 

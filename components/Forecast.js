@@ -11,7 +11,7 @@ export default function Forecast(props) {
                 <Text style={styles.big}>{props.temp}°C</Text>
                
             </View>
-            <View style={[styles.infoContent,{marginTop:10}]}>
+            <View style={[styles.infoContent,{marginTop:20}]}>
                 <Text style={[styles.Info,{textAlign:'center'},{margin:10},{fontSize: 20}]}>More Information</Text>
                 <Text style={styles.Info}>Pressure: {props.pressure}hPa</Text>        
                 <Text style={styles.Info}>Humidity: {props.humidity}%</Text>
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
     infoContent:{
         backgroundColor:'pink',
         borderRadius: 20,
-        width: 350,
-        height: 110,
+        width: 300,
+        height: 120,
         
     },
 })

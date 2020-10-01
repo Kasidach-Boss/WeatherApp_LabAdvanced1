@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { View, Text, ImageBackground, StyleSheet ,Image} from 'react-native';
+import { View, Text, ImageBackground, StyleSheet ,Image,ScrollView} from 'react-native';
 import Forecast from './Forecast';
 
 
@@ -48,7 +48,7 @@ export default function Weather(props) {
                 <View style={styles.cover}>
                     <Text style={styles.medium}>Hatyai {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                    style={{width: 250, height: 250}} />
+                    style={{width: '40%', height: '40%'}} />
                     <Forecast {...forecastInfo} />  
                 </View>
                 </ImageBackground>
@@ -60,7 +60,7 @@ export default function Weather(props) {
                     <View style={styles.cover}>
                     <Text style={styles.medium}>Trang {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                    style={{width: 250, height: 250}} />
+                    style={{width: '40%', height: '40%'}} />
                     <Forecast {...forecastInfo} />  
                 </View>
                 </ImageBackground>
@@ -72,7 +72,7 @@ export default function Weather(props) {
                     <View style={styles.cover}>
                     <Text style={styles.medium}>Chiangmai {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                    style={{width: 250, height: 250}} />
+                    style={{width: '40%', height: '40%'}} />
                     <Forecast {...forecastInfo} />  
                 </View>
                 </ImageBackground>
@@ -84,7 +84,7 @@ export default function Weather(props) {
                     <View style={styles.cover}>
                     <Text style={styles.medium}>Khonkaen {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                    style={{width: 250, height: 250}} />
+                    style={{width: '40%', height: '40%'}} />
                     <Forecast {...forecastInfo} />  
                 </View>
                 </ImageBackground>
@@ -92,13 +92,19 @@ export default function Weather(props) {
         }
         if(props.zipCode === '20000'){
             return(
+                
                 <ImageBackground source={require('../Chonburi.jpg')} style={styles.backdrop}>
+                
                 <View style={styles.cover}>
-                    <Text style={styles.medium}>Chonburi {props.zipCode} Thailand</Text>
-                    <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
-                    style={{width: 250, height: 250}} />
-                    <Forecast {...forecastInfo} />  
+                   
+                        <Text style={styles.medium}>Chonburi {props.zipCode} Thailand</Text>
+                        <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
+                        style={{width: '40%', height: '40%'}} />
+                    <ScrollView>
+                        <Forecast {...forecastInfo} /> 
+                    </ScrollView> 
                 </View>
+                
                 </ImageBackground>
             )
         }
@@ -106,6 +112,7 @@ export default function Weather(props) {
         return(
             <ImageBackground source={require('../View.jpg')} style={styles.backdrop}>
             <View style={styles.cover}>
+                
                 <Text style={styles.medium}>Chonburi {props.zipCode} Thailand</Text>
                 <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
                 style={{width: 250, height: 250}} />
