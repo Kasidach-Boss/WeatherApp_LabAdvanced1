@@ -49,7 +49,9 @@ export default function Weather(props) {
                     <Text style={styles.medium}>Hatyai {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
                     style={{width: '40%', height: '40%'}} />
+                    <ScrollView>
                     <Forecast {...forecastInfo} />  
+                    </ScrollView>
                 </View>
                 </ImageBackground>
             )
@@ -61,7 +63,9 @@ export default function Weather(props) {
                     <Text style={styles.medium}>Trang {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
                     style={{width: '40%', height: '40%'}} />
+                    <ScrollView>
                     <Forecast {...forecastInfo} />  
+                    </ScrollView>
                 </View>
                 </ImageBackground>
             )
@@ -73,7 +77,9 @@ export default function Weather(props) {
                     <Text style={styles.medium}>Chiangmai {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
                     style={{width: '40%', height: '40%'}} />
+                    <ScrollView>
                     <Forecast {...forecastInfo} />  
+                    </ScrollView>
                 </View>
                 </ImageBackground>
             )
@@ -85,7 +91,9 @@ export default function Weather(props) {
                     <Text style={styles.medium}>Khonkaen {props.zipCode} Thailand</Text>
                     <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
                     style={{width: '40%', height: '40%'}} />
+                    <ScrollView>
                     <Forecast {...forecastInfo} />  
+                    </ScrollView>
                 </View>
                 </ImageBackground>
             )
@@ -116,7 +124,9 @@ export default function Weather(props) {
                 <Text style={styles.medium}>Chonburi {props.zipCode} Thailand</Text>
                 <Image source={{uri: "http://openweathermap.org/img/wn/"+forecastInfo.icon+"@2x.png"}}
                 style={{width: 250, height: 250}} />
+                <ScrollView>
                 <Forecast {...forecastInfo} />  
+                </ScrollView>
             </View>
             </ImageBackground>
         )
