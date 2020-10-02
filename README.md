@@ -3,7 +3,7 @@
 ### `choco install nodejs`
 ### `choco install yarn`
 ### `choco install git`
-### Note: ถ้ายังไม่ติดตั้ง chocolatey ให้ติดตั้งโดยใช้คำสั่งข้างล่าง โดยทำผ่านCommand Prompt (ที่รันด้วยสิทธิ์ Administrator)
+ Note: ถ้ายังไม่ติดตั้ง chocolatey ให้ติดตั้งโดยใช้คำสั่งข้างล่าง โดยทำผ่านCommand Prompt (ที่รันด้วยสิทธิ์ Administrator)
 หรือสามารถดูเพิ่มเติมได้ที่ https://chocolatey.org/docs/installation
 ### `@”%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe” -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command “ [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(‘https://chocolatey.org/install.ps1'))" && SET “PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin”`
 ### 2.ติดตั้ง create-react-app CLI โดยใช้
