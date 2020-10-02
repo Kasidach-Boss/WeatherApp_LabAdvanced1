@@ -16,8 +16,8 @@
 ### 5.ต่อมาเราก็เริ่มโปรเจ็คของเราด้วยคำสั่ง
 ### `yarn start `
 ### ติดตั้งReact Navigation  
-###`expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view`
+### `expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view`
 ### ติดตั้ง stack และ navigation/native
-###`yarn add @react-navigation/stack @react-navigation/native`
+### `yarn add @react-navigation/stack @react-navigation/native`
 ### ติดตั้ง TabBottom
-###`yarn add @react-navigation/bottom-tabs`
+### `yarn add @react-navigation/bottom-tabs`
